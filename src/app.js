@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv=require('dotenv')
 const zonesRouter = require('./routes/zones.router')
 const planRouter = require('./routes/plan.router')
-
+const userRouter = require('../routes/user.router')
 const dbConnect= require('./dbConnect')
 // const planetsRouter = require("./routes/planets/planets.router");
 dbConnect();
@@ -16,7 +16,7 @@ app.use(cors({
 app.use(express.json());
 app.use(zonesRouter);
 app.use(planRouter);
-
+app.use(userRouter);
 
 
 module.exports = app
